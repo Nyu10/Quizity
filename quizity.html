@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+        <title> Quizity </title>
+        <style>
+        header{
+                background-image: url("https://d29fhpw069ctt2.cloudfront.net/pho                                                                                                             to/52205/preview/npreview_1280x1280.jpg");
+                padding: 25px;
+                text-align: center;
+                color: white;
+                margin-left: -10px;
+                margin-top: -10px;
+                margin-bottom: 5px;
+                margin-right: -10px;
+                font-size:60px;
+                font-weight:bold
+                }
+</style>
+</head>
+
+<body style="background-color:#89D0FF;">
+
+<header>
+<a href="http://homer.stuy.edu/~dzhang10/quizity.html" style="color:white;text-d                                                                                                             ecoration:none;">QUIZITY </a>
+</header>
+<h3 align="center" style="color:red;"> All the field in each respective column m                                                                                                             ust be filled in for the respective buttons to work.<br>
+Input textbook for Quiz ID is capped at 6 characters and Quiz Pin at 4 character                                                                                                             s. Please make sure there are no extra space keys.</h3>
+
+<table  border=1 align="center">
+<tr>    <th width="605" >CREATE</th> <th width="605"  >TAKE</th>
+        <th width="605">RESULTS </th>
+</tr>
+<tr>
+        <td><p align=center> If you are here to make a quiz, please complete thi                                                                                                             s column and press the Continue Button. The information required is as follows:                                                                                                              </p>
+                <ul>
+                        <li>Quiz Name is what you want the quiz to be called. </                                                                                                             li>
+                        <li>Quiz Pin is the pin to the quiz that will be needed                                                                                                              for you to see the results of your quiz later on.</li>
+                        <li>Number of questions is how many questions you want t                                                                                                             o have in your quiz.</li>
+                </ul> </td>
+        <td><p align=center>If you are here to take a quiz, please complete this                                                                                                              column and press the Start Button. The information required is as follows: </p>
+                <ul>
+                        <li>Quiz ID is an unique identification number assigned                                                                                                              to each quiz. Only the creator of the quiz will have this number.
+                             If you don't have this number you will not be able                                                                                                              to take this quiz. </li>
+                        <li>Name is the identifier for the you, a person taking                                                                                                              the quiz. Although it is called name, you may also use other forms of
+                                identification including Student ID numbers or n                                                                                                             icknames. Please ask the quiz creator if they have a preferance.</li>
+                </ul></td>
+        <td><p align=center>If you are here to check the results of a quiz, plea                                                                                                             se complete this column and press the Check Button. The information required is                                                                                                              as follows:</p>
+                <ul>
+                        <li>Quiz ID is the unique indentification number that yo                                                                                                             u have recieved when you completed creating the quiz.</li>
+                        <li>Quiz PIN is the pin that you have choosen when you f                                                                                                             irst created the quiz.</li>
+                </ul>
+        </td>
+</tr>
+<tr>
+<td align=center>
+<br>
+<form action="subfiles/addquestions.py" method="POST">
+ <p style="color:red;">You must have all three piece of information to proceed.                                                                                                              </p>
+        Choose Quiz Name: <input type="text" name ="quiz_name" value ="Your Quiz                                                                                                              Name"><br>
+        Choose Quiz Pin: <input type="text" name="pin" maxlength="4" value="Your                                                                                                              Quiz Pin"><br>
+        Number of Questions: <input type="text" name="number" value="# Questions                                                                                                             "> <br>
+        <input type='submit' name='s_button' value="Continue">
+</form>
+</td>
+<td align=center>
+<form action="subfiles/takequiz.py" method="POST">
+        <p style="color:red;">You must have both piece of information to proceed                                                                                                             .</p>
+        Input Quiz ID: <input type="text" maxlength="6" name ="id" value ="Enter                                                                                                              ID"><br>
+        Your Name: <input type="text" name="name" value="Your Name"><br><br>
+        <input type='submit' name='s_button' value="Start">
+</form>
+</td>
+<td align=center>
+<form action="subfiles/result.py" method="POST">
+ <p style="color:red;">You must have both piece of information to proceed. </p>
+        Input Quiz ID: <input type="text" name ="id" maxlength="6" value ="Enter                                                                                                              ID"><br>
+        Input Quiz Pin: <input type="password" maxlength="4" name="pin"><br><br>
+        <input type='submit' name='s_button' value="Check">
+</form>
+ </td>
+
+</tr>
+</div>
+</table>
+<h3>Sample Quizes</h3>
+<ul>
+        <li> Quiz ID: 518587    Quiz Pin: 1234</li>
+        <li> Quiz ID: 437404    Quiz Pin: 1234</li>
+        <li> Quiz ID: 793340    Quiz Pin: 1234</li>
+</ul>
+<footer align="center"><a href="http://homer.stuy.edu/~dzhang10/final.html"> WEB                                                                                                             SITE DOCUMENTATION </a> </footer>
+</body>
+</html>

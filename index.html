@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title> Quizity </title>
+        <style>
+                header{
+                        background-image: url("https://d29fhpw069ctt2.cloudfront.net/photo/52205/preview/npreview_1280x1280.jpg");
+                        padding: 25px;
+                        text-align: center;
+                        color: white;
+                        margin-left: -10px;
+                        margin-top: -10px;
+                        margin-bottom: 5px;
+                        margin-right: -10px;
+                        font-size:60px;
+                        font-weight:bold
+                        }
+        </style>
+</head>
+<body style="background-color:#89D0FF;">
+<header> <a href="http://homer.stuy.edu/~dzhang10/quizity.html" style="color:white;text-decoration:none;">QUIZITY </a> </header>
+
+<h1 align="center">Quizity Website Documentation</h1>
+<h2 align="center">Devin Zhang and Nehemiah Yu, Period 9</h2> <hr>
+
+<ul>
+        <li><h3><a href="http://homer.stuy.edu/~dzhang10/quizity.html">PROJECT LINK</a><h3>
+        </li>
+        <li> <h3>PROJECT DESCRIPTION</h3>
+                <p>The website allows you to create, take, and see the results of a quiz. All the process are online. Currently you can
+                only create multiple choice quizzes with questions containing most four possible choices. When after taking the quiz,
+                the user can see their score and where they made mistakes. The results of all completed quizzes can be viewed with accompanying statistics.
+                </p>
+        </li>
+
+        <li> <h3>INSTRUCTIONS</h3>
+                <ul>
+                        <li style="font-weight: bold;">MAKING THE QUIZ</li>
+                                <p> Enter the information in the first column (called CREATE) on the homepage. First, choose a Quiz Name, a PIN
+                                to review the results later, and the number of questions you want. Then click continue. You are then prompted to a
+                                screen where you fill in your quiz data. You should fill in all the questions, possible answers, and then the letter
+                                of the correct answer. Next press Submit. You are then at a confirmation page. You can still go back to the change questions
+                                now. Once you are sure you want to create the quiz, click Going Live. Congratulations! You have made a quiz. Write down your
+                                Quiz ID and PIN so you others can take your quiz. If you do not have your Quiz ID or PIN, your quiz will not be accessible.
+                                Click Quizity to return to homepage.
+                                </p>
+                        <li style="font-weight: bold;">TAKING THE QUIZ</li>
+                                <p>Enter the information in the second column (called TAKE) on the homepage. First you must have and input a Quiz ID to
+                                access a quiz. Then enter your name (or other form of identification). Next press on the Start Button. Now you are brought
+                                to a quiz. Answer the questions with the drop down options. Click Submit when you are done. You will be taken to a page with
+                                your score and the questions. Questions that you have answered wrong will be shown in red.
+                                </p>
+                        <li style="font-weight: bold;">SEEING THE RESULTS</li>
+                                <p>Enter the Quiz ID and PIN. You will be directed to a page with Information about the Quiz including the number of times
+                                your quiz was completed, a chart with statistics, and a table with names and their scores.</p>
+                </ul>
+        </li>
+        <li> <h3>HOW IT WORKS</h3>
+                <ul><p>We used a lot of python files as backend and they get information, use, interpret, and save them. Then it prints the html
+                code for that page with required information. The homepage is a regular html file. We have three sections: make a quiz, take a quiz,
+                and show results of the quiz.
+                        </p>
+
+                        <li style="font-weight: bold;">MAKING THE QUIZ</li>
+                                <p> For make the quiz, we take the data you enter: Quiz Name, Quiz ID and number of questions, and redirects the information
+                                to a python file. We take the number of questions to print the template for amount of questions you need. For this, we just used
+                                a while loop for how many questions there were and changed the value of the information (HTML input values). Once you are done adding
+                                the questions and answers, we save answers and questions into a csv file with a unique number for identification. The six-digit
+                                number is generated randomly. We have a list of used ID to prevent repetition. After submitting the question, you will see a
+                                confirmation page with an assigned ID. If you are ready to create the quiz, press on Go Live. Our code leads to a page with a
+                                page that confirms the completion of your quiz along with the Quiz ID and PIN so that the information will be saved onto the
+                                server and so that you can jot it down.
+                                </p>
+                        <li style="font-weight: bold;">TAKING THE QUIZ</li>
+                                <p> When you want to take a quiz, you have to input the Quiz ID and your name. We take the ID and open the data about the quiz
+                                from the csv file printed it out (through changing the cvs to various dictionaries and lists) in an html format that would allow
+                                you to actually answer the questions using a selection list. After you take the quiz, another python file checks your answers
+                                with the correct answers that the creator has. It then prints out  your score as a percentage of correct answers along with a
+                                table with all the questions. Questions that you answered wrong will be in red.
+                                </p>
+                        <li style="font-weight: bold;">SEEING THE RESULTS</li>
+                                <p> The results page takes all the data taken from quiz takers for a particular quiz. It is saved from they submit the check
+                                in a csv format. It uses the data to calculate various types of statistics and prints the results in a table. The page will
+                                also have the name and scores of the user in a two-column table for easy viewing (ordered in alphabetical order).
+                                </p>
+                </ul>
+        </li>
+        <li> <h3>FILES</h3>
+                <ul>
+                        <li>QUIZITY.HTML : homepage that lets you access the three parts of the quiz, make a quiz, take a quiz, and see the results of a quiz</li>
+                        <li>FINAL.HTML : this documentation</li>
+                        <li>SUBFILES: A folder with all the subfiles (all files except for quizity.html and final.html) </li>
+                        <li>ID.TXT : list of Quiz IDs and their respective PINS</li>
+                        <li>ADDQUESTIONS.PY : python file that allows you to add questions, answer choices, and the correct answers </li>
+                        <li>SAVEQUESTIONS.PY : python file for changing input data from addquestions and shows the confirmation page of the quiz
+                                that allows you to makes your quiz Go Live. This file also generates the random six-digit unique PIN value </li>
+                        <li>SAVEID.PY : this python file saves all of the quiz data: questions, answers, Quiz ID, and PIN in unique text files a
+                                and prints your Quiz ID and PIN to confirm their values </li>
+                        <li>TAKEQUIZ.PY : python file that prints the quiz so that the user is able to take and answer questions</li>
+                        <li>CHECK.PY : python file that returns your score of the quiz and saves it to a unique result text file</li>
+                        <li>RESULT.PY : python file that calculates and shows the statistics of the quiz from the score of the takers and prints out
+                                the name of the people that took the quiz and their respective scores</li>
+                        <li>Results/ : a folder where scores of quiz takers are recorded in textfiles (######.txt)</li>
+                        <li>Quiz/ : a  folder that has data on each quiz: Quiz Name, questions, choices, and answers in csv format</li>
+                </ul>
+        </li>
+        <li> <h3>RESOURCES</h3>
+                <ul>    <li>Python Statistic Module:<a href="https://docs.python.org/3/library/statistics.html">https://docs.python.org/3/library/statistics.html</a> </li>
+                </ul>
+        </li>
+        <li> <h3>BUGS, ERRORS, THINGS TO BE AWARE OF</h3>
+                <ul>    <li> All inputs must be filled out either in each column (like on hompage) or in each page or else it will not continue.</li>
+                                <li> There can be no extra spaces in any textbook inputs that are unnessary. Note: when entering Quiz ID on the homepage,
+                                        there can not be a space before or after the number.</li>
+                                <li> When adding questions, choices, and answers, you can not use quotes, apostrophes, or commas in the textbox or else the data will not be
+                                        saved or not be saved correctly.</li>
+                </ul>
+        </li>
+</ul>
+</body>
+</html>
